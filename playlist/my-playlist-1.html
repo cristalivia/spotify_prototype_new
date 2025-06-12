@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Playlist #1 - Spotify</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/playlist.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fab fa-spotify"></i>
+                    <span>Spotify</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">                        
+                        <i class="fas fa-book"></i>
+                        <span>Your Library</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-divider"></div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-plus"></i>
+                        <span>Create Playlist</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-heart"></i>
+                        <span>Liked Songs</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="playlist-section">
+                <div class="playlist-item" onclick="window.location.href='my-playlist-1.html'">My Playlist #1</div>
+                <div class="playlist-item">Chill Vibes</div>
+                <div class="playlist-item">Workout Mix</div>
+                <div class="playlist-item">Indonesian Hits</div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="nav-buttons">
+                    <button class="nav-btn" onclick="history.back()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn" onclick="history.forward()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="user-menu">
+                    <div class="user-profile" onclick="toggleUserMenu()">
+                        <img src="../img/kitty.png" alt="User" class="user-avatar">
+                        <span>kitty</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#">Profile</a>     
+                        <a href="../settings/theme.html">Settings</a>
+                        <a href="#">Log out</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="playlist-header">
+                    <div class="playlist-cover">
+                        <img src="../img/myplaylist.jpg" alt="My Playlist #1" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover;">
+                    </div>
+                    
+                    <div class="playlist-info">
+                        <span class="playlist-type">PLAYLIST</span>
+                        <h1 class="playlist-title-display">My Playlist #1</h1>
+                        <p class="playlist-description-display">A collection of my favorite songs!</p>
+                        <div class="playlist-meta">
+                            <span class="creator">kitty</span>
+                            <span class="separator">•</span>
+                            <span class="song-count">8 songs</span>
+                            <span class="separator">•</span>
+                            <span class="playlist-duration">26 min</span>
+                            <div class="likes-count" onclick="showPlaylistSavers()">
+                                <i class="fas fa-heart"></i>
+                                <span id="likesCount">8 saves</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playlist-actions">
+                    <button class="play-btn-large" onclick="playPlaylist()">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="action-btn" onclick="shufflePlaylist()">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button class="action-btn" onclick="showPlaylistOptions()">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+
+                <div class="playlist-tracks">
+                    <div class="tracks-header">
+                        <div class="track-number">#</div>
+                        <div class="track-title">TITLE</div>
+                        <div class="track-album">ALBUM</div>
+                        <div class="track-date">DATE ADDED</div>
+                        <div class="track-duration">
+                            <i class="far fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="tracks-list">
+                        <div class="track-item">
+                            <div class="track-number">1</div>
+                            <div class="track-info">
+                                <img src="../img/shapeofyou.png" alt="Shape of You">
+                                <div class="track-details">
+                                    <h6>Shape of You</h6>
+                                    <p>Ed Sheeran</p>
+                                </div>
+                            </div>
+                            <div class="track-album">÷ (Divide)</div>
+                            <div class="track-date">5 days ago</div>
+                            <div class="track-duration">3:53</div>
+                        </div>
+                        
+                        <div class="track-item">
+                            <div class="track-number">2</div>
+                            <div class="track-info">
+                                <img src="../img/blindinglights.jpg" alt="Blinding Lights">
+                                <div class="track-details">
+                                    <h6>Blinding Lights</h6>
+                                    <p>The Weeknd</p>
+                                </div>
+                            </div>
+                            <div class="track-album">After Hours</div>
+                            <div class="track-date">1 week ago</div>
+                            <div class="track-duration">3:20</div>
+                        </div>
+                        
+                        <div class="track-item">
+                            <div class="track-number">3</div>
+                            <div class="track-info">
+                                <img src="../img/watermelon.jpg" alt="Watermelon Sugar">
+                                <div class="track-details">
+                                    <h6>Watermelon Sugar</h6>
+                                    <p>Harry Styles</p>
+                                </div>
+                            </div>
+                            <div class="track-album">Fine Line</div>
+                            <div class="track-date">2 weeks ago</div>
+                            <div class="track-duration">2:54</div>
+                        </div>
+                        
+                        <div class="track-item">
+                            <div class="track-number">4</div>
+                            <div class="track-info">
+                                <img src="../img/levitating.jpg" alt="Levitating">
+                                <div class="track-details">
+                                    <h6>Levitating</h6>
+                                    <p>Dua Lipa</p>
+                                </div>
+                            </div>
+                            <div class="track-album">Future Nostalgia</div>
+                            <div class="track-date">3 weeks ago</div>
+                            <div class="track-duration">3:23</div>
+                        </div>
+                        
+                        <div class="track-item">
+                            <div class="track-number">5</div>
+                            <div class="track-info">
+                                <img src="../img/good4u.jpg" alt="good 4 u">
+                                <div class="track-details">
+                                    <h6>good 4 u</h6>
+                                    <p>Olivia Rodrigo</p>
+                                </div>
+                            </div>
+                            <div class="track-album">SOUR</div>
+                            <div class="track-date">1 month ago</div>
+                            <div class="track-duration">2:58</div>
+                        </div>
+                        
+                        <div class="track-item">
+                            <div class="track-number">6</div>
+                            <div class="track-info">
+                                <img src="../img/asitwas.jpg" alt="As It Was">
+                                <div class="track-details">
+                                    <h6>As It Was</h6>
+                                    <p>Harry Styles</p>
+                                </div>
+                            </div>
+                            <div class="track-album">Harry's House</div>
+                            <div class="track-date">1 month ago</div>
+                            <div class="track-duration">2:47</div>
+                        </div>
+                        
+                        <div class="track-item">
+                            <div class="track-number">7</div>
+                            <div class="track-info">
+                                <img src="../img/antihero.jpg" alt="Anti-Hero">
+                                <div class="track-details">
+                                    <h6>Anti-Hero</h6>
+                                    <p>Taylor Swift</p>
+                                </div>
+                            </div>
+                            <div class="track-album">Midnights</div>
+                            <div class="track-date">2 months ago</div>
+                            <div class="track-duration">3:20</div>
+                        </div>
+                        
+                        <div class="track-item">
+                            <div class="track-number">8</div>
+                            <div class="track-info">
+                                <img src="../img/flowers.jpg" alt="Flowers">
+                                <div class="track-details">
+                                    <h6>Flowers</h6>
+                                    <p>Miley Cyrus</p>
+                                </div>
+                            </div>
+                            <div class="track-album">Endless Summer Vacation</div>
+                            <div class="track-date">2 months ago</div>
+                            <div class="track-duration">3:20</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="player-bar">
+        <div class="player-left">
+            <img src="../img/shapeofyou.png" alt="Current Song" class="current-song-image">
+            <div class="current-song-info">
+                <div class="song-title">Shape of You</div>
+                <div class="song-artist">Ed Sheeran</div>
+            </div>
+            <button class="like-btn">
+                <i class="far fa-heart"></i>
+            </button>
+        </div>
+
+        <div class="player-center">
+            <div class="player-controls">
+                <button class="control-btn">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button class="control-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="play-pause-btn" onclick="togglePlayPause()">
+                    <i class="fas fa-play" id="playPauseIcon"></i>
+                </button>
+                <button class="control-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button class="control-btn">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+            <div class="progress-bar">
+                <span class="time-current">1:23</span>
+                <div class="progress-container">
+                    <div class="progress-bg">
+                        <div class="progress-fill" style="width: 30%"></div>
+                        <div class="progress-handle"></div>
+                    </div>
+                </div>
+                <span class="time-total">3:47</span>
+            </div>
+        </div>
+
+        <div class="player-right">
+            <div class="speed-control">
+                <button class="speed-btn" id="speedBtn" onclick="toggleSpeedDropdown()">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>1x</span>
+                </button>
+                <div class="speed-dropdown" id="speedDropdown">
+                    <div class="speed-option" onclick="setPlaybackSpeed(0.5)">0.5x</div>
+                    <div class="speed-option" onclick="setPlaybackSpeed(0.75)">0.75x</div>
+                    <div class="speed-option active" onclick="setPlaybackSpeed(1.0)">1x</div>
+                    <div class="speed-option" onclick="setPlaybackSpeed(1.25)">1.25x</div>
+                    <div class="speed-option" onclick="setPlaybackSpeed(1.5)">1.5x</div>
+                </div>
+            </div>
+            <button class="control-btn">
+                <i class="fas fa-list"></i>
+            </button>
+            
+            <button class="control-btn">
+                <i class="fas fa-desktop"></i>
+            </button>
+            <div class="volume-control">
+                <button class="control-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="volume-bar">
+                    <div class="volume-bg">
+                        <div class="volume-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="playlistOptionsModal">
+        <div class="modal-content playlist-options-modal">
+            <div class="modal-header">
+                <h2>Playlist Options</h2>
+                <button class="modal-close" onclick="closePlaylistOptions()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="options-list">
+                <div class="option-item" onclick="showPlaylistSavers()">
+                    <i class="fas fa-eye"></i>
+                    <span>View users who saved this playlist</span>
+                </div>
+                <div class="option-item" onclick="downloadPlaylist()">
+                    <i class="fas fa-download"></i>
+                    <span>Download</span>
+                </div>
+                <div class="option-item" onclick="editPlaylist()">
+                    <i class="fas fa-edit"></i>
+                    <span>Edit</span>
+                </div>
+                <div class="option-item" onclick="sharePlaylist()">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </div>
+                <div class="option-item" onclick="deletePlaylist()">
+                    <i class="fas fa-trash"></i>
+                    <span>Delete playlist</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="saversModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>View users who saved this playlist</h2>
+                <button class="modal-close" onclick="closePlaylistSavers()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="savers-info">
+                <div class="playlist-info-small">
+                    <img src="../img/myplaylist.jpg" alt="My Playlist #1" class="playlist-thumb">
+                    <div class="playlist-details">
+                        <h4>My Playlist #1</h4>
+                        <p>8 saves • Public playlist</p>
+                    </div>
+                </div>
+            </div>
+            <div class="user-save-section">
+                <h3>User save</h3>
+                <div class="savers-list" id="saversList">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/playlist.js"></script>
+    <script>
+        function showPlaylistOptions() {
+            const modal = document.getElementById("playlistOptionsModal")
+            modal.classList.add("show")
+        }
+
+        function closePlaylistOptions() {
+            const modal = document.getElementById("playlistOptionsModal")
+            modal.classList.remove("show")
+        }
+
+    </script>
+</body>
+</html>
